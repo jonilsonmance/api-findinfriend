@@ -1,0 +1,43 @@
+{
+  "name": "api-modelo",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run --dir src/use-case",
+    "test:watch": "vitest --dir src/use-case",
+    "pretest:e2e": "cd prisma/vitest-environment-prisma && npm link",
+    "test:e2e": "vitest run --dir src/http",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "2.2.2",
+    "@types/bcryptjs": "2.4.6",
+    "@types/node": "22.8.1",
+    "@types/supertest": "6.0.2",
+    "@vitest/ui": "2.1.4",
+    "prisma": "5.21.1",
+    "supertest": "7.0.0",
+    "tsup": "8.3.5",
+    "tsx": "4.19.1",
+    "typescript": "5.6.3",
+    "vite-tsconfig-paths": "5.0.1",
+    "vitest": "2.1.4"
+  },
+  "dependencies": {
+    "@fastify/jwt": "9.0.1",
+    "@prisma/client": "5.21.1",
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.4.5",
+    "fastify": "5.0.0",
+    "zod": "3.23.8"
+  }
+}
